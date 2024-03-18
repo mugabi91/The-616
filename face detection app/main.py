@@ -10,13 +10,13 @@ trained_face_model = cv2.CascadeClassifier("haarcascade_frontalface_default.xml"
 
 #choosing image 
 directory = "./"
-images = set()
+images = []
 target_extension = [".png",".jpeg",".jpg",".raw"]
 
 for filename in os.listdir(directory):
     if any(filename.endswith(ext) for ext in target_extension):
         file_path = os.path.join(directory,filename)
-        images.add(filename)
+        images.append(filename)
         
         
 def grayScale(input_media):
